@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT</title>
+</head>
+
+<body>
+
+    <h1>ChatGPT</h1>
+
+    <form action="index.php" method="post">
+
+        <div class="pergunta">
+            <input type="text" name="question" placeholder="Faça sua Pergunta" id="question">
+        </div>
+    </form>
+
+    <input type="submit" name="sub" value="Enviar Pergunta" id="enviar">
+
+    <br><br>
+
+    <div class="resposta">
+        <p id="answer">
+        </p>
+    </div>
+
+    <script>
+            var enviar = document.getElementById('enviar');
+            enviar.onclick = function () {
+            var pergunta = document.getElementById('question').value.toLowerCase();
+            var resposta = document.getElementById('answer');
+
+            if (pergunta.includes('ola') || pergunta.includes('olá')) {
+                resposta.textContent = 'Olá, tudo bem? Aqui é a Carolina Maria de Jesus...';
+            } 
+            
+            else if (pergunta.includes('quando você nasceu?') || pergunta.includes('quando voce nasceu')) {
+                resposta.textContent = 'Eu nasci em 14 de março de 1914, em Minas Gerais, Brasil.';
+            } 
+            
+            else {
+                resposta.textContent = 'Desculpe, não entendi a pergunta. Por favor, reformule.';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
