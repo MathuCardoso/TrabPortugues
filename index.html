@@ -40,6 +40,10 @@
             else if (pergunta.includes('quando você nasceu?') || pergunta.includes('quando voce nasceu')) {
                 resposta.textContent = 'Eu nasci em 14 de março de 1914, em Minas Gerais, Brasil.';
             } 
+
+            else if(pergunta.includes('o que voce acha da fome') || pergunta.includes('O que você acha da fome?')){
+                resposta.textContent = 'A fome é uma realidade cruel e dolorosa que afeta muitas pessoas ao redor do mundo. Ela é uma das maiores injustiças sociais que existem, privando indivíduos e famílias do direito mais básico à alimentação adequada. Através das minhas experiências e daquilo que testemunhei na favela, sei o quanto a fome pode ser devastadora, não apenas fisicamente, mas também emocionalmente. É uma questão que merece atenção urgente, esforços para erradicação e solidariedade para com aqueles que sofrem com essa terrível condição.';
+            }
             
             else {
                 resposta.textContent = 'Desculpe, não entendi a pergunta. Por favor, reformule.';
