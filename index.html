@@ -5,52 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>ChatGPT</h1>
+    <div class="container">
 
-    <form action="index.php" method="post">
+        <h1>O que deseja perguntar?</h1>
 
-        <div class="pergunta">
-            <input type="text" name="question" placeholder="Faça sua Pergunta" id="question">
+        <div class="perguntas">
+            <div class="blocos"><p>1- Olá.</p></div>
+            <div class="blocos"><p>2- Quem é você?</p></div>
+            <div class="blocos"><p>3- Onde você nasceu?</p></div>
+            <div class="blocos"><p>4- Quando você nasceu?</p></div>
+            <div class="blocos"><p>5- Qual é a sua cor favorita?</p></div>
+            <div class="blocos"><p>6- Como você está?</p></div>
+            <div class="blocos"><p>7- Qual é o seu objetivo?</p></div>
+            <div class="blocos"><p>8- O que você gosta de fazer?</p></div>
         </div>
-    </form>
 
-    <input type="submit" name="sub" value="Enviar Pergunta" id="enviar">
+        <br><br>
 
-    <br><br>
+        <div class="resposta">
+            <p id="answer"></p>
+        </div>
 
-    <div class="resposta">
-        <p id="answer">
-        </p>
+        <script src="script.js"></script>
     </div>
-
-    <script>
-            var enviar = document.getElementById('enviar');
-            enviar.onclick = function () {
-            var pergunta = document.getElementById('question').value.toLowerCase();
-            var resposta = document.getElementById('answer');
-
-            if (pergunta.includes('ola') || pergunta.includes('olá')) {
-                resposta.textContent = 'Olá, tudo bem? Aqui é a Carolina Maria de Jesus...';
-            } 
-            
-            else if (pergunta.includes('quando você nasceu?') || pergunta.includes('quando voce nasceu')) {
-                resposta.textContent = 'Eu nasci em 14 de março de 1914, em Minas Gerais, Brasil.';
-            } 
-
-            else if(pergunta.includes('o que voce acha da fome') || pergunta.includes('O que você acha da fome?')){
-                resposta.textContent = 'A fome é uma realidade cruel e dolorosa que afeta muitas pessoas ao redor do mundo. Ela é uma das maiores injustiças sociais que existem, privando indivíduos e famílias do direito mais básico à alimentação adequada. Através das minhas experiências e daquilo que testemunhei na favela, sei o quanto a fome pode ser devastadora, não apenas fisicamente, mas também emocionalmente. É uma questão que merece atenção urgente, esforços para erradicação e solidariedade para com aqueles que sofrem com essa terrível condição.';
-            }
-            
-            else {
-                resposta.textContent = 'Desculpe, não entendi a pergunta. Por favor, reformule.';
-            }
-        }
-    </script>
 
 </body>
 
 </html>
+
