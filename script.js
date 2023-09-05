@@ -1,17 +1,22 @@
 var perguntas = document.getElementsByClassName('blocos');
 var reset = document.getElementById('limpar');
+var respostaRenderizando = false;
 
 for (var i = 0; i < perguntas.length; i++) {
 
     function typeWriter(elemento) {
-
         const textoArray = elemento.innerHTML.split('');
         elemento.innerHTML = '';
         textoArray.forEach((letra, i) => {
-          setTimeout(() => elemento.innerHTML += letra, 35 * i);
+            setTimeout(() => {
+                elemento.innerHTML += letra;
+                if (i === textoArray.length - 1) {
+                    // Verificar se a resposta foi totalmente renderizada
+                    respostaRenderizando = false;
+                }
+            }, 35 * i);
         });
-
-      }
+    }
 
 
         var resposta = document.getElementById('answer');
@@ -19,6 +24,13 @@ for (var i = 0; i < perguntas.length; i++) {
         
 
         perguntas[i].addEventListener('click', function(event) {
+
+            if (respostaRenderizando) {
+                alert('Aguarde a resposta anterior ser totalmente renderizada antes de selecionar outra pergunta.');
+                return;
+            } 
+    
+        respostaRenderizando = true;
         var pergunta = event.currentTarget.textContent.split('-')[0].trim();
 
         if (pergunta === '1') {
@@ -55,13 +67,19 @@ for (var i = 0; i < perguntas.length; i++) {
             resposta.textContent = 'Escrever na favela era desafiador devido à falta de recursos, como papel e caneta. Mas eu usava o que tinha à mão, muitas vezes escrevendo em pedaços de papel encontrados no lixo, porque acredito que a escrita é uma forma poderosa de expressão.';
             typeWriter(resposta);
         }else if(pergunta === '12') {
-            resposta.textContent = 'Escrever na favela era desafiador devido à falta de recursos, como papel e caneta. Mas eu usava o que tinha à mão, muitas vezes escrevendo em pedaços de papel encontrados no lixo, porque acredito que a escrita é uma forma poderosa de expressão.';
+            resposta.textContent = ' Eu comecei a escrever meu diário porque senti a necessidade de registrar as dificuldades e as experiências que vivia na favela. Era uma forma de desabafar e documentar a realidade que muitos ignoravam.';
             typeWriter(resposta);
-        }else {
-            resposta.textContent = 'Fala direito filha da puta';
+        }else if(pergunta === '13') {
+            resposta.textContent = 'Sim, escrevi outros livros além do meu mais famoso, "Quarto de Despejo: Diário de uma Favelada". Esses livros incluem "Casa de Alvenaria", que foi publicado em 1961 e continua a narrar minha vida na favela, destacando as dificuldades que enfrentei como mãe solteira. Em 1963, publiquei "Pedaços de Fome", que é uma continuação das minhas memórias e reflexões sobre a vida na favela, enfatizando as lutas cotidianas por sobrevivência e dignidade. Também nesse ano, lancei "Provérbios", uma coleção que expressa a sabedoria popular e a cultura das favelas brasileiras. Embora esses livros não tenham alcançado a mesma notoriedade de "Quarto de Despejo", eles oferecem bastidores adicionais sobre minha vida, observações e reflexões sobre as condições de vida nas favelas e as questões sociais do Brasil na década de 1960. Juntos, eles ampliaram a compreensão das experiências das pessoas marginalizadas no país.';
             typeWriter(resposta);
-
+        }else if(pergunta === '14') {
+            resposta.textContent = 'Sim, eu sonhava em sair da favela e acreditava que meus escritos seriam minha passagem para fora daquela realidade. Acreditava que um dia minhas palavras seriam publicadas e poderiam mudar minha vida e a vida de minha família.';
+            typeWriter(resposta);
         }
+
+        resposta.addEventListener('animationend', function() {
+            respostaRenderizando = false;
+        });
     });
 }
 
