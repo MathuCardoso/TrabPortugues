@@ -175,7 +175,7 @@ body{
         background: linear-gradient(to right, rgba(1, 1, 1, 0.949), rgba(1, 1, 1, 0.702));
         border-radius: 10px;
         padding: 15px;
-        height: 450px;
+        height: 550px;
         padding: 15px 15px;
     }
     
@@ -184,7 +184,7 @@ body{
         text-align: left;
         border-bottom: 2px solid black;
         width: max-content;
-        max-width: 490px;
+        max-width: 335px;
         border-radius: 5px;
     }
     
@@ -192,7 +192,7 @@ body{
         cursor: pointer;
         margin: 20px 0;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
         transition: all 0.2s;
     }
     
