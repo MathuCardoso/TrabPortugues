@@ -146,4 +146,10 @@ body{
         height: max-content;
     }
 
+    .perguntas{
+        max-width: 1075px;
+        height: 550px;
+        padding: 25px 45px;
+    }
+
 }
