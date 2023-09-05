@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -23,7 +25,7 @@ body, html{
 }
 
 .tt1{
-    font-weight: normal;
+    font-weight: bold;
     font-size: 27px;
     color: white;
 }
@@ -42,33 +44,30 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     padding-top: 25px;
 }
 
 .cont1{
+    line-break: normal;
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-left: 15%;
+    margin-left: 10%;
     width: 100%;
 }
 
 .perguntas{
-    background-color: rgba(1, 1, 1, 0.827);
+    text-align: center;
+    background: linear-gradient(to right, rgba(1, 1, 1, 0.949), rgba(1, 1, 1, 0.702));
     border-radius: 10px;
     padding: 15px;
-    width: max-content;
+    width: 1060px;
     padding: 15px 45px;
 }
 
 .pergunta{
     font-weight: bold;
-}
-
-.pergText{
-    color: white;
-    font-weight: normal;
-
 }
 
 .blocos{
@@ -91,14 +90,17 @@ body{
     padding: 20px;
     border-radius: 15px;
     width: 50%;
-    height: 450px;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #answer{
-    font-size: 25px;
+    font-size: 35px;
     letter-spacing: 1px;
     line-height: 35px;
     font-weight: bold;
+    font-family: 'Dancing Script', cursive;
 }
 
 #voltar{
@@ -108,6 +110,27 @@ body{
     padding: 15px;
     margin-top: -20px;
     margin-bottom: 25px;
+}
+
+.reset{
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    width: auto;
+    height: 100%;
+}
+
+#limpar{
+    width: max-content;
+    font-size: 18px;
+    border: none;
+    border: 3px solid white;
+    border-radius: 7px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width:768px){
